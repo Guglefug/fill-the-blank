@@ -1,4 +1,5 @@
 FillTheBlank::Application.routes.draw do
+  root :to => redirect('/stories')
   resources :stories do
     member do
       get :fill
