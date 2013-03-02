@@ -1,5 +1,10 @@
 FillTheBlank::Application.routes.draw do
-  resources :stories
+  resources :stories do
+    member do
+      get :fill
+      post :see
+    end
+  end
 
 
   # The priority is based upon order of creation:

@@ -20,6 +20,23 @@ class StoriesController < ApplicationController
       format.json { render json: @story }
     end
   end
+  
+  # GET /stories/1/fill
+  # GET /stories/1/fill.json
+  def fill
+    @story = Story.find(params[:id])
+
+    respond_to do |format|
+      format.html # fill.html.erb
+      format.json { render json: @story }
+    end
+  end
+  
+  # POST /stories/1/see
+  def see
+    @story = Story.find(params[:id])
+    @body = @story.see(params)
+  end
 
   # GET /stories/new
   # GET /stories/new.json

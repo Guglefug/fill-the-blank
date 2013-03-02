@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for @story, url: [:see, @story], method: :post do |f| %>
+<p>
+  <% @story.fields.each do |field| %>
+  <div class="field">
+    <%= label_tag field.name %><br />
+    <%= text_field_tag field.name %>
+  </div>
+  <% end %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+</p>
+
+<% end %>
