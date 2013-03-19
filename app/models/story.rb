@@ -4,7 +4,7 @@ class Story < ActiveRecord::Base
   Field = Struct.new(:name)
   
   def fields
-	body.scan(/{(\w+)}/).flatten.uniq.map do |name|
+	body.scan(/{([^}]+)}/).flatten.uniq.map do |name|
 	  Field.new(name)
 	end
   end
